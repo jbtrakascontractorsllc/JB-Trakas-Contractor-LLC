@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JB Trakas Contractor LLC | Fences, Decks, Patios & Driveways — Ridgely, MD</title>
+<meta name="description" content="JB Trakas Contractor, LLC is a trusted local contractor serving Ridgely, MD and surrounding areas — fences, patios, decks, porches, driveways and sidewalks built with quality materials and skilled craftsmanship.">
+<link rel="icon" href="https://jbtrakascontractors.com/wp-content/uploads/2025/07/Logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#161B18;
+    --ink-soft:#2B322D;
+    --paper:#F7F3EA;
+    --paper-dim:#EFE9DB;
+    --brass:#B4813E;
+    --brass-light:#D9AE6C;
+    --stone:#6E7568;
+    --line:rgba(22,27,24,0.14);
+    --line-light:rgba(247,243,234,0.22);
+    --radius:2px;
+    --maxw:1180px;
+    --shadow:0 24px 60px -30px rgba(22,27,24,0.45);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Manrope',sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:600;margin:0 0 .5em;color:var(--ink);letter-spacing:-.01em;}
+  p{margin:0 0 1em;color:var(--ink-soft);}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  ::selection{background:var(--brass);color:var(--paper);}
+  ::-moz-selection{background:var(--brass);color:var(--paper);}
+  button{font-family:inherit;cursor:pointer;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+  .eyebrow{display:flex;align-items:center;gap:12px;font-family:'Manrope',sans-serif;font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--brass);font-weight:700;margin-bottom:16px;}
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--brass);}
+  .eyebrow.dark{color:var(--brass-light);}
+
+  /* ---- Blueprint corner-mark signature ---- */
+  .plate{position:relative;padding:2px;}
+  .plate::before,.plate::after,.plate .cA,.plate .cB{content:"";position:absolute;width:22px;height:22px;pointer-events:none;}
+  .plate::before{top:0;left:0;border-top:2px solid var(--brass);border-left:2px solid var(--brass);}
+  .plate::after{bottom:0;right:0;border-bottom:2px solid var(--brass);border-right:2px solid var(--brass);}
+  .plate .cA{top:0;right:0;border-top:2px solid var(--brass);border-right:2px solid var(--brass);opacity:.45;}
+  .plate .cB{bottom:0;left:0;border-bottom:2px solid var(--brass);border-left:2px solid var(--brass);opacity:.45;}
+
+  .coord-rule{display:flex;align-items:center;gap:18px;margin:0 auto 64px;max-width:var(--maxw);padding:0 28px;color:var(--stone);}
+  .coord-rule .ln{flex:1;height:1px;background:repeating-linear-gradient(90deg,var(--line) 0 6px,transparent 6px 12px);}
+  .coord-rule span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;font-weight:700;color:var(--brass);}
+
+  /* ---- Header ---- */
+  header.site{position:sticky;top:0;z-index:500;background:rgba(247,243,234,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  .header-inner{max-width:var(--maxw);margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;gap:24px;}
+  .brand{display:flex;align-items:center;gap:14px;}
+  .brand img{height:58px;width:auto;object-fit:contain;}
+  .brand .btext{display:flex;flex-direction:column;line-height:1.15;}
+  .brand .btext strong{font-family:'Fraunces',serif;font-size:19px;font-weight:600;color:var(--ink);}
+  .brand .btext em{font-style:normal;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass);font-weight:700;margin-top:3px;}
+
+  nav.main{display:flex;align-items:center;gap:36px;}
+  nav.main a{font-size:14.5px;font-weight:600;color:var(--ink-soft);padding:8px 0;position:relative;}
+  nav.main a:hover,nav.main a.active{color:var(--brass);}
+  nav.main a.active::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--brass);}
+  .has-drop{position:relative;}
+  .dropdown{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:var(--ink);min-width:230px;padding:10px;border-radius:var(--radius);box-shadow:var(--shadow);opacity:0;visibility:hidden;translate:0 8px;transition:.18s ease;}
+  .has-drop:hover .dropdown,.has-drop:focus-within .dropdown{opacity:1;visibility:visible;translate:0 0;}
+  .dropdown a{display:block;padding:10px 14px;color:#E8E2D3;font-weight:500;font-size:13.5px;border-radius:2px;}
+  .dropdown a:hover{background:rgba(180,129,62,.18);color:var(--brass-light);}
+
+  .head-actions{display:flex;align-items:center;gap:16px;}
+  .phone-pill{display:flex;align-items:center;gap:9px;font-weight:700;font-size:14px;color:var(--ink);}
+  .phone-pill svg{width:16px;height:16px;fill:var(--brass);}
+  .btn{display:inline-flex;align-items:center;gap:9px;padding:13px 26px;font-weight:700;font-size:13px;letter-spacing:.05em;text-transform:uppercase;border-radius:1px;border:1px solid transparent;transition:.2s;}
+  .btn-brass{background:var(--brass);color:var(--paper);}
+  .btn-brass:hover{background:var(--ink);color:var(--brass-light);}
+  .btn-outline{border-color:var(--ink);color:var(--ink);}
+  .btn-outline:hover{border-color:var(--brass);color:var(--brass);}
+  .btn-outline.on-dark{border-color:var(--line-light);color:var(--paper);}
+  .btn-outline.on-dark:hover{border-color:var(--brass-light);color:var(--brass-light);}
+  .burger{display:none;background:none;border:none;flex-direction:column;gap:5px;padding:6px;}
+  .burger span{width:24px;height:2px;background:var(--ink);}
+
+  /* mobile nav */
+  .mobile-nav{display:none;}
+
+  /* ---- Hero ---- */
+  .hero{position:relative;background:var(--ink);color:var(--paper);overflow:hidden;}
+  .hero-bg{position:absolute;inset:0;background-image:url('https://jbtrakascontractors.com/wp-content/uploads/elementor/thumbs/IMG_8077-scaled-rhxz02dc87rest6j0u0xjre1mthipvqrz9enf09qwg.jpeg');background-size:cover;background-position:center;opacity:.28;}
+  .hero-grid-overlay{position:absolute;inset:0;background-image:linear-gradient(var(--line-light) 1px,transparent 1px),linear-gradient(90deg,var(--line-light) 1px,transparent 1px);background-size:64px 64px;opacity:.25;mask-image:linear-gradient(to bottom,black,transparent 85%);}
+  .hero-inner{position:relative;max-width:var(--maxw);margin:0 auto;padding:120px 28px 100px;}
+  .hero h1{color:var(--paper);font-size:clamp(34px,5vw,60px);line-height:1.06;max-width:820px;}
+  .hero p.lead{color:#C9C2AE;font-size:18px;max-width:560px;margin-bottom:36px;}
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:70px;}
+  .hero-coord{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass-light);opacity:.8;margin-bottom:22px;}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line-light);padding-top:32px;max-width:640px;}
+  .hero-stats div{padding-right:20px;}
+  .hero-stats strong{display:block;font-family:'Fraunces',serif;font-size:36px;color:var(--brass-light);font-weight:600;}
+  .hero-stats span{font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:#B7B09C;}
+
+  /* ---- generic section ---- */
+  section{padding:96px 0;}
+  section.tight{padding:72px 0;}
+  .dark-sec{background:var(--ink);color:var(--paper);}
+  .dark-sec p{color:#C9C2AE;}
+  .dark-sec h2{color:var(--paper);}
+  .dim-sec{background:var(--paper-dim);}
+  .head-row{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:52px;flex-wrap:wrap;}
+  .head-row h2{font-size:clamp(28px,3.4vw,42px);max-width:640px;}
+  .head-row p{max-width:420px;margin:0;}
+  .center-head{text-align:center;max-width:640px;margin:0 auto 52px;}
+  .center-head .eyebrow{justify-content:center;}
+  .center-head .eyebrow::before{display:none;}
+
+  /* ---- about teaser (home) ---- */
+  .about-teaser{display:grid;grid-template-columns:0.9fr 1.1fr;gap:64px;align-items:center;}
+  .about-teaser figure{margin:0;}
+  .about-teaser img{width:100%;height:460px;object-fit:cover;}
+  .feature-mini{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:28px 0 32px;}
+  .feature-mini div{border-left:2px solid var(--brass);padding-left:16px;}
+  .feature-mini h4{font-size:15.5px;margin-bottom:6px;}
+  .feature-mini p{font-size:14px;margin:0;}
+
+  /* ---- services grid ---- */
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  .svc-card{background:var(--paper);position:relative;transition:.25s;}
+  .svc-card .plate{background:var(--ink);}
+  .svc-img{height:230px;overflow:hidden;position:relative;}
+  .svc-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
+  .svc-card:hover .svc-img img{transform:scale(1.06);}
+  .svc-body{padding:26px 22px 28px;border:1px solid var(--line);border-top:none;}
+  .svc-body h3{font-size:20px;margin-bottom:10px;}
+  .svc-body p{font-size:14.5px;margin-bottom:18px;}
+  .svc-link{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brass);}
+  .svc-link:hover{color:var(--ink);}
+  .services-cta{display:flex;justify-content:center;margin-top:52px;}
+
+  /* ---- why choose us ---- */
+  .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-light);border:1px solid var(--line-light);}
+  .why-card{background:var(--ink);padding:34px 26px;}
+  .why-num{font-family:'Fraunces',serif;font-size:13px;color:var(--brass-light);letter-spacing:.1em;margin-bottom:18px;}
+  .why-card h4{color:var(--paper);font-size:17px;margin-bottom:10px;}
+  .why-card p{font-size:13.8px;margin:0;}
+
+  /* ---- process (about page) ---- */
+  .process{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;counter-reset:step;}
+  .process li{list-style:none;position:relative;padding-top:52px;border-top:1px solid var(--line);}
+  .process li::before{counter-increment:step;content:"0" counter(step);position:absolute;top:-1px;left:0;font-family:'Fraunces',serif;font-size:14px;color:var(--brass);background:var(--paper);padding-right:10px;transform:translateY(-50%);}
+  .process h4{font-size:16.5px;margin-bottom:8px;}
+  .process p{font-size:13.8px;}
+
+  /* ---- gallery ---- */
+  .gal-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:180px;gap:14px;}
+  .gal-grid a{overflow:hidden;position:relative;display:block;}
+  .gal-grid img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
+  .gal-grid a:hover img{transform:scale(1.08);}
+  .gal-grid a::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(22,27,24,.55),transparent 55%);opacity:0;transition:.25s;}
+  .gal-grid a:hover::after{opacity:1;}
+  .gal-grid a span{position:absolute;left:14px;bottom:12px;color:#fff;font-size:12.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;opacity:0;transition:.25s;}
+  .gal-grid a:hover span{opacity:1;}
+  .gal-grid a.tall{grid-row:span 2;}
+
+  /* ---- testimonials ---- */
+  .tst-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  .tst-card{background:var(--paper);border:1px solid var(--line);padding:32px 28px;position:relative;}
+  .tst-quote{font-size:34px;font-family:'Fraunces',serif;color:var(--brass);line-height:1;margin-bottom:12px;display:block;}
+  .tst-card p.txt{font-size:15px;color:var(--ink-soft);margin-bottom:22px;}
+  .tst-name{font-weight:700;font-size:14px;color:var(--ink);}
+  .tst-role{font-size:12px;color:var(--stone);text-transform:uppercase;letter-spacing:.06em;}
+
+  /* ---- faq ---- */
+  .faq-list{max-width:760px;margin:0 auto;}
+  .faq-item{border-bottom:1px solid var(--line);}
+  .faq-q{width:100%;background:none;border:none;display:flex;justify-content:space-between;align-items:center;padding:22px 4px;font-family:'Fraunces',serif;font-size:18px;color:var(--ink);text-align:left;}
+  .faq-q .plus{font-size:22px;color:var(--brass);transition:.25s;font-family:'Manrope',sans-serif;font-weight:300;}
+  .faq-item.open .plus{transform:rotate(45deg);}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;}
+  .faq-item.open .faq-a{max-height:200px;}
+  .faq-a p{padding:0 4px 22px;font-size:14.5px;}
+
+  /* ---- CTA band ---- */
+  .cta-band{background:var(--brass);color:var(--ink);text-align:center;padding:74px 0;}
+  .cta-band h2{color:var(--ink);}
+  .cta-band p{color:rgba(22,27,24,.75);max-width:520px;margin:0 auto 28px;}
+  .cta-band .btn-outline{border-color:var(--ink);color:var(--ink);}
+  .cta-band .btn-outline:hover{background:var(--ink);color:var(--brass-light);}
+
+  /* ---- footer ---- */
+  footer.site{background:var(--ink);color:#C9C2AE;padding-top:80px;}
+  .foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.2fr;gap:40px;padding-bottom:56px;border-bottom:1px solid var(--line-light);}
+  .foot-brand img{height:46px;width:auto;object-fit:contain;margin-bottom:18px;filter:brightness(0) invert(1);}
+  .foot-brand p{font-size:13.8px;max-width:280px;}
+  .foot-social{display:flex;gap:10px;margin-top:18px;}
+  .foot-social a{width:34px;height:34px;border:1px solid var(--line-light);border-radius:50%;display:flex;align-items:center;justify-content:center;}
+  .foot-social svg{width:14px;height:14px;fill:#C9C2AE;}
+  .foot-social a:hover{border-color:var(--brass);}
+  .foot-social a:hover svg{fill:var(--brass-light);}
+  footer h5{font-family:'Manrope',sans-serif;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-light);font-weight:700;margin-bottom:20px;}
+  footer ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;}
+  footer ul a{font-size:14px;color:#C9C2AE;}
+  footer ul a:hover{color:var(--brass-light);}
+  .foot-contact li{font-size:14px;display:flex;gap:10px;align-items:flex-start;}
+  .foot-contact svg{width:15px;height:15px;fill:var(--brass-light);flex-shrink:0;margin-top:3px;}
+  .foot-map{margin-top:6px;}
+  .foot-map iframe{width:100%;height:130px;border:0;filter:grayscale(.3) contrast(1.05);}
+  .foot-bottom{max-width:var(--maxw);margin:0 auto;padding:26px 28px;display:flex;justify-content:space-between;font-size:12.5px;color:#8C8877;flex-wrap:wrap;gap:10px;}
+
+  /* ---- inner page hero (services/about/contact/service-detail) ---- */
+  .page-hero{background:var(--ink);color:var(--paper);padding:150px 0 70px;position:relative;overflow:hidden;}
+  .page-hero .hero-grid-overlay{opacity:.18;}
+  .page-hero h1{color:var(--paper);font-size:clamp(30px,4.4vw,50px);max-width:760px;position:relative;}
+  .crumb{position:relative;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:#B7B09C;margin-bottom:18px;}
+  .crumb .brass-x{color:var(--brass-light);}
+
+  /* ---- service detail ---- */
+  .svc-detail{display:grid;grid-template-columns:1.05fr 0.95fr;gap:64px;align-items:start;}
+  .svc-detail img{width:100%;height:520px;object-fit:cover;}
+  .svc-detail-list{list-style:none;margin:26px 0 34px;padding:0;display:grid;gap:14px;}
+  .svc-detail-list li{display:flex;gap:12px;align-items:flex-start;font-size:14.8px;color:var(--ink-soft);}
+  .svc-detail-list svg{width:16px;height:16px;fill:var(--brass);flex-shrink:0;margin-top:4px;}
+  .other-services{margin-top:110px;}
+  .os-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  .os-card{border:1px solid var(--line);padding:20px;transition:.2s;}
+  .os-card:hover{border-color:var(--brass);}
+  .os-card img{height:120px;width:100%;object-fit:cover;margin-bottom:14px;}
+  .os-card h4{font-size:15px;margin-bottom:8px;}
+  .os-card a{font-size:12px;font-weight:700;color:var(--brass);text-transform:uppercase;letter-spacing:.06em;}
+
+  /* ---- about page extra ---- */
+  .stat-strip{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line-light);margin-top:60px;}
+  .stat-strip div{padding:36px 28px;border-right:1px solid var(--line-light);}
+  .stat-strip div:last-child{border-right:none;}
+  .stat-strip strong{font-family:'Fraunces',serif;font-size:38px;color:var(--brass-light);display:block;}
+  .stat-strip span{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#B7B09C;}
+
+  /* ---- contact page ---- */
+  .contact-grid{display:grid;grid-template-columns:0.85fr 1.15fr;gap:60px;}
+  .contact-info-list{list-style:none;padding:0;margin:30px 0;display:grid;gap:24px;}
+  .contact-info-list li{display:flex;gap:16px;}
+  .ci-ico{width:44px;height:44px;background:var(--paper-dim);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .ci-ico svg{width:18px;height:18px;fill:var(--brass);}
+  .contact-info-list h4{font-size:14px;margin-bottom:4px;}
+  .contact-info-list p{margin:0;font-size:14.5px;}
+  .contact-form{display:grid;gap:18px;}
+  .contact-form .row2{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  .contact-form input,.contact-form select,.contact-form textarea{width:100%;padding:14px 16px;background:var(--paper-dim);border:1px solid var(--line);color:var(--ink);font-family:inherit;font-size:14.5px;border-radius:1px;}
+  .contact-form label{font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--stone);margin-bottom:6px;display:block;}
+  .contact-form textarea{resize:vertical;min-height:130px;}
+  .map-frame{margin-top:70px;}
+  .map-frame iframe{width:100%;height:420px;border:0;filter:grayscale(.25) contrast(1.05);}
+
+  /* ---- routing ---- */
+  .route{display:none;}
+  .route.active{display:block;}
+
+  @media(max-width:980px){
+    nav.main,.head-actions .phone-pill{display:none;}
+    .burger{display:flex;}
+    .about-teaser,.svc-detail,.contact-grid{grid-template-columns:1fr;}
+    .about-teaser img,.svc-detail img{height:320px;}
+    .svc-grid{grid-template-columns:repeat(2,1fr);}
+    .why-grid,.os-grid{grid-template-columns:repeat(2,1fr);}
+    .tst-grid{grid-template-columns:1fr;}
+    .gal-grid{grid-template-columns:repeat(2,1fr);}
+    .foot-grid{grid-template-columns:1fr 1fr;}
+    .process{grid-template-columns:1fr 1fr;}
+    .stat-strip{grid-template-columns:1fr;}
+    .stat-strip div{border-right:none;border-bottom:1px solid var(--line-light);}
+    .contact-form .row2{grid-template-columns:1fr;}
+    .mobile-nav.open{display:flex;}
+    .mobile-nav{position:fixed;inset:0;top:86px;background:var(--ink);z-index:400;flex-direction:column;padding:30px 28px;gap:6px;overflow-y:auto;}
+    .mobile-nav a{color:var(--paper);font-size:17px;font-weight:600;padding:14px 0;border-bottom:1px solid var(--line-light);}
+    .mobile-nav .sub a{padding-left:16px;font-size:14.5px;color:#C9C2AE;border-bottom:none;}
+  }
+  @media(max-width:640px){
+    .hero-inner{padding:100px 20px 70px;}
+    .hero-stats{grid-template-columns:repeat(3,1fr);}
+    .hero-stats strong{font-size:26px;}
+    .svc-grid,.why-grid,.gal-grid,.os-grid{grid-template-columns:1fr;}
+    .foot-grid{grid-template-columns:1fr;}
+    .process{grid-template-columns:1fr;}
+    section{padding:64px 0;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site">
+  <div class="header-inner">
+    <a href="#/home" class="brand" data-route="/home">
+      <img src="https://jbtrakascontractors.com/wp-content/uploads/2025/07/Logo.jpg" alt="JB Trakas Contractor LLC logo">
+      <span class="btext">
+        <strong>JB Trakas Contractor, LLC</strong>
+        <em>Fences · Decks · Patios · Driveways</em>
+      </span>
+    </a>
+
+    <nav class="main">
+      <a href="#/home" data-route="/home">Home</a>
+      <a href="#/about" data-route="/about">About Us</a>
+      <div class="has-drop">
+        <a href="#/services" data-route="/services">Services</a>
+        <div class="dropdown">
+          <a href="#/service/fences-patios" data-route="/service/fences-patios">Fences &amp; Patios Work</a>
+          <a href="#/service/decks-porches" data-route="/service/decks-porches">Decks and Porches</a>
+          <a href="#/service/vinyl-fence" data-route="/service/vinyl-fence">Vinyl Fence</a>
+          <a href="#/service/driveway" data-route="/service/driveway">Driveway Work</a>
+          <a href="#/service/sidewalks" data-route="/service/sidewalks">Sidewalks Work</a>
+        </div>
+      </div>
+      <a href="#/gallery" data-route="/gallery">Gallery</a>
+      <a href="#/contact" data-route="/contact">Contact Us</a>
+    </nav>
+
+    <div class="head-actions">
+      <a class="phone-pill" href="tel:4107394723">
+        <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z"/></svg>
+        (410) 739-4723
+      </a>
+      <a href="#/contact" data-route="/contact" class="btn btn-brass">Free Quote</a>
+      <button class="burger" id="burgerBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#/home" data-route="/home">Home</a>
+    <a href="#/about" data-route="/about">About Us</a>
+    <a href="#/services" data-route="/services">Services</a>
+    <div class="sub">
+      <a href="#/service/fences-patios" data-route="/service/fences-patios">— Fences &amp; Patios Work</a>
+      <a href="#/service/decks-porches" data-route="/service/decks-porches">— Decks and Porches</a>
+      <a href="#/service/vinyl-fence" data-route="/service/vinyl-fence">— Vinyl Fence</a>
+      <a href="#/service/driveway" data-route="/service/driveway">— Driveway Work</a>
+      <a href="#/service/sidewalks" data-route="/service/sidewalks">— Sidewalks Work</a>
+    </div>
+    <a href="#/gallery" data-route="/gallery">Gallery</a>
+    <a href="#/contact" data-route="/contact">Contact Us</a>
+    <a href="tel:4107394723" style="color:var(--brass-light);">(410) 739-4723</a>
+  </div>
+</header>
+
+<main id="app">
+
+<!-- ============ HOME ============ -->
+<section class="route" id="route-/home">
+
+  <div class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid-overlay"></div>
+    <div class="hero-inner">
+      <div class="eyebrow dark">JB Trakas Contractor, LLC — Built on Quality &amp; Trust</div>
+      <h1>Reliable Fence Contractor &amp; Outdoor Construction Services in Ridgely, MD</h1>
+      <p class="lead">We provide expert fencing, patios, decks, driveways, and sidewalk solutions for homes and businesses. Quality workmanship, honest pricing, and dependable service — done right the first time.</p>
+      <div class="hero-ctas">
+        <a href="#/contact" data-route="/contact" class="btn btn-brass">Request a Free Quote</a>
+        <a href="https://jbtrakascontractors.com/services/" target="_blank" rel="noopener" class="btn btn-outline on-dark">Explore Services</a>
+      </div>
+      <div class="hero-coord">38.9972° N, 75.8822° W — Ridgely, Caroline County, MD</div>
+      <div class="hero-stats">
+        <div><strong>250+</strong><span>Completed Projects</span></div>
+        <div><strong>200+</strong><span>Happy Customers</span></div>
+        <div><strong>7</strong><span>Days a Week Service</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- About teaser -->
+  <section>
+    <div class="wrap about-teaser">
+      <figure class="plate">
+        <span class="cA"></span><span class="cB"></span>
+        <img src="https://jbtrakascontractors.com/wp-content/uploads/elementor/thumbs/IMG_8077-scaled-rhxz02dc87rest6j0u0xjre1mthipvqrz9enf09qwg.jpeg" alt="Completed outdoor construction project by JB Trakas Contractor">
+      </figure>
+      <div>
+        <div class="eyebrow">About JB Trakas Contractor, LLC</div>
+        <h2>Building Strong, Lasting Outdoor Spaces</h2>
+        <p>JB Trakas Contractor, LLC is a trusted local contractor serving Ridgely, MD, and surrounding areas. We specialize in fences, patios, decks, porches, driveways, and sidewalks. Our team is committed to delivering durable results using quality materials and skilled craftsmanship.</p>
+        <div class="feature-mini">
+          <div>
+            <h4>Precision &amp; Quality Work</h4>
+            <p>Detailed craftsmanship and high-quality materials on every build.</p>
+          </div>
+          <div>
+            <h4>Reliable &amp; Guaranteed</h4>
+            <p>Clear communication and on-time project completion, every time.</p>
+          </div>
+        </div>
+        <a href="#/about" data-route="/about" class="btn btn-outline">Read Our Story</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="coord-rule"><span>Our Craft</span><div class="ln"></div></div>
+
+  <!-- Services -->
+  <section class="tight" id="home-services">
+    <div class="wrap">
+      <div class="head-row">
+        <div>
+          <div class="eyebrow">Services</div>
+          <h2>Our Professional Construction Services</h2>
+        </div>
+        <p>At JB Trakas Contractor LLC, we specialize in creating durable and stylish outdoor spaces. From fences and patios to driveways and decks, we bring quality craftsmanship to every project.</p>
+      </div>
+      <div class="svc-grid" id="serviceGrid"></div>
+      <div class="services-cta">
+        <a href="https://jbtrakascontractors.com/services/" target="_blank" rel="noopener" class="btn btn-brass">Explore Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why choose us -->
+  <section class="dark-sec tight">
+    <div class="wrap">
+      <div class="center-head">
+        <div class="eyebrow dark">Why Homeowners Choose Us</div>
+        <h2>Trusted Quality You Can Rely On</h2>
+        <p>We are committed to delivering reliable construction services with quality craftsmanship, focused on customer satisfaction, durable results, and honest service on every project.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-card"><div class="why-num">Craft</div><h4>Expert Craftsmanship</h4><p>Precision on every tile, floor, and installation — clean lines and results that stand strong for years.</p></div>
+        <div class="why-card"><div class="why-num">Team</div><h4>Seamless Collaboration</h4><p>Every fence, deck, patio, driveway, and sidewalk is built to last, reflecting our commitment to excellence.</p></div>
+        <div class="why-card"><div class="why-num">Plan</div><h4>Personalized Project Plan</h4><p>Custom solutions tailored to your needs — we plan and execute alongside you from start to finish.</p></div>
+        <div class="why-card"><div class="why-num">Build</div><h4>Built-to-Order Solutions</h4><p>Every project is planned with care, ensuring your outdoor spaces are functional, beautiful, and built your way.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery preview -->
+  <section class="tight">
+    <div class="wrap">
+      <div class="head-row">
+        <div>
+          <div class="eyebrow">Gallery</div>
+          <h2>Recent Work, Ridgely &amp; Beyond</h2>
+        </div>
+        <a href="#/gallery" data-route="/gallery" class="btn btn-outline">View Full Gallery</a>
+      </div>
+      <div class="gal-grid" id="galleryPreview"></div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="dim-sec">
+    <div class="wrap">
+      <div class="center-head">
+        <div class="eyebrow">Testimonials</div>
+        <h2>Our Clients' Testimonials</h2>
+        <p>See what our clients have to say about our expert craftsmanship and reliable service.</p>
+      </div>
+      <div class="tst-grid" id="testimonialGrid"></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section>
+    <div class="wrap">
+      <div class="center-head">
+        <div class="eyebrow">FAQs</div>
+        <h2>Frequently Asked Questions</h2>
+        <p>Got questions? Explore our frequently asked questions to learn more about our services and process.</p>
+      </div>
+      <div class="faq-list" id="faqList"></div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-band">
+    <div class="wrap">
+      <h2>Ready to Transform Your Home?</h2>
+      <p>Contact JB Trakas Contractor, LLC today for a free consultation and expert outdoor construction services.</p>
+      <a href="#/contact" data-route="/contact" class="btn btn-outline">Contact Us</a>
+    </div>
+  </div>
+
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="route" id="route-/about">
+  <div class="page-hero">
+    <div class="hero-grid-overlay"></div>
+    <div class="wrap">
+      <div class="crumb">Home <span class="brass-x">/</span> About Us</div>
+      <h1>Built on Quality &amp; Trust in Ridgely, MD</h1>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap about-teaser">
+      <figure class="plate">
+        <span class="cA"></span><span class="cB"></span>
+        <img src="https://jbtrakascontractors.com/wp-content/uploads/elementor/thumbs/IMG_8077-scaled-rhxz02dc87rest6j0u0xjre1mthipvqrz9enf09qwg.jpeg" alt="JB Trakas Contractor completed project">
+      </figure>
+      <div>
+        <div class="eyebrow">About JB Trakas Contractor, LLC</div>
+        <h2>Building Strong, Lasting Outdoor Spaces</h2>
+        <p>JB Trakas Contractor, LLC is a trusted local contractor serving Ridgely, MD, and surrounding areas. We specialize in fences, patios, decks, porches, driveways, and sidewalks. Our team is committed to delivering durable results using quality materials and skilled craftsmanship. Every project is handled with attention to detail, clear communication, and customer satisfaction. From small repairs to full installations, we treat your property like our own.</p>
+        <a href="#/contact" data-route="/contact" class="btn btn-brass">Book Now</a>
+      </div>
+      <div class="stat-strip" style="grid-column:1/-1;">
+        <div><strong>250+</strong><span>Completed Projects</span></div>
+        <div><strong>200+</strong><span>Happy Customers</span></div>
+        <div><strong>100%</strong><span>Satisfaction Focused</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="coord-rule"><span>Our Process</span><div class="ln"></div></div>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="center-head">
+        <div class="eyebrow">Achievement</div>
+        <h2>Where Experience Builds Lasting Results</h2>
+        <p>With years of experience, we deliver durable and high-quality construction projects from first call to final walkthrough.</p>
+      </div>
+      <ol class="process">
+        <li><h4>Consultation</h4><p>We visit your property, listen to your goals, and talk through materials and layout options.</p></li>
+        <li><h4>Free Estimate</h4><p>You receive a clear, no-obligation quote with honest pricing and a realistic timeline.</p></li>
+        <li><h4>Construction</h4><p>Our team builds with precision, using quality materials and proven craftsmanship.</p></li>
+        <li><h4>Walkthrough</h4><p>We review the finished work together, backed by our workmanship warranty.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="dark-sec tight">
+    <div class="wrap">
+      <div class="center-head">
+        <div class="eyebrow dark">Why Homeowners Choose Us</div>
+        <h2>Trusted Quality You Can Rely On</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card"><div class="why-num">Craft</div><h4>Expert Craftsmanship</h4><p>Precision on every installation — clean lines and results that stand strong for years.</p></div>
+        <div class="why-card"><div class="why-num">Team</div><h4>Seamless Collaboration</h4><p>Every fence, deck, patio, driveway, and sidewalk is built to last.</p></div>
+        <div class="why-card"><div class="why-num">Plan</div><h4>Personalized Project Plan</h4><p>Custom solutions tailored to your needs, planned alongside you.</p></div>
+        <div class="why-card"><div class="why-num">Build</div><h4>Built-to-Order Solutions</h4><p>Functional, beautiful outdoor spaces, built just the way you want.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dim-sec">
+    <div class="wrap">
+      <div class="center-head">
+        <div class="eyebrow">Testimonials</div>
+        <h2>Our Clients' Testimonials</h2>
+      </div>
+      <div class="tst-grid" id="testimonialGridAbout"></div>
+    </div>
+  </section>
+
+  <div class="cta-band">
+    <div class="wrap">
+      <h2>Ready to Transform Your Home?</h2>
+      <p>Contact JB Trakas Contractor, LLC today for a free consultation and expert outdoor construction services.</p>
+      <a href="#/contact" data-route="/contact" class="btn btn-outline">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES OVERVIEW ============ -->
+<section class="route" id="route-/services">
+  <div class="page-hero">
+    <div class="hero-grid-overlay"></div>
+    <div class="wrap">
+      <div class="crumb">Home <span class="brass-x">/</span> Services</div>
+      <h1>Our Professional Construction Services</h1>
+    </div>
+  </div>
+  <section>
+    <div class="wrap">
+      <div class="center-head" style="text-align:left;max-width:640px;margin-bottom:52px;">
+        <div class="eyebrow">Services</div>
+        <p style="max-width:600px;">At JB Trakas Contractor LLC, we specialize in creating durable and stylish outdoor spaces. From fences and patios to driveways and decks, we bring quality craftsmanship to every project.</p>
+      </div>
+      <div class="svc-grid" id="serviceGridFull"></div>
+      <div class="services-cta">
+        <a href="https://jbtrakascontractors.com/services/" target="_blank" rel="noopener" class="btn btn-brass">Explore Services on Our Full Site</a>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ============ SERVICE DETAIL TEMPLATE (populated by JS) ============ -->
+<section class="route" id="route-/service">
+  <div class="page-hero">
+    <div class="hero-grid-overlay"></div>
+    <div class="wrap">
+      <div class="crumb">Home <span class="brass-x">/</span> Services <span class="brass-x">/</span> <span id="svcCrumb"></span></div>
+      <h1 id="svcTitle"></h1>
+    </div>
+  </div>
+  <section>
+    <div class="wrap svc-detail">
+      <figure class="plate"><span class="cA"></span><span class="cB"></span><img id="svcImg" src="" alt=""></figure>
+      <div>
+        <div class="eyebrow" id="svcEyebrow">Service</div>
+        <h2 id="svcHeading"></h2>
+        <p id="svcDesc"></p>
+        <ul class="svc-detail-list" id="svcFeatures"></ul>
+        <div class="hero-ctas">
+          <a href="#/contact" data-route="/contact" class="btn btn-brass">Get a Free Quote</a>
+          <a href="tel:4107394723" class="btn btn-outline">Call (410) 739-4723</a>
+        </div>
+      </div>
+    </div>
+    <div class="wrap other-services">
+      <div class="eyebrow">Explore More</div>
+      <h3 style="margin-bottom:28px;">Other Services</h3>
+      <div class="os-grid" id="otherServices"></div>
+    </div>
+  </section>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section class="route" id="route-/gallery">
+  <div class="page-hero">
+    <div class="hero-grid-overlay"></div>
+    <div class="wrap">
+      <div class="crumb">Home <span class="brass-x">/</span> Gallery</div>
+      <h1>A Look at Our Craftsmanship</h1>
+    </div>
+  </div>
+  <section>
+    <div class="wrap">
+      <div class="center-head" style="text-align:left;max-width:640px;margin-bottom:44px;">
+        <div class="eyebrow">Gallery</div>
+        <p>Browse recent fences, decks, patios, driveways, and sidewalks completed by our team around Ridgely, MD.</p>
+      </div>
+      <div class="gal-grid" id="galleryFull"></div>
+      <div class="services-cta">
+        <a href="https://jbtrakascontractors.com/gallery/" target="_blank" rel="noopener" class="btn btn-brass">View Full Gallery on Our Site</a>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="route" id="route-/contact">
+  <div class="page-hero">
+    <div class="hero-grid-overlay"></div>
+    <div class="wrap">
+      <div class="crumb">Home <span class="brass-x">/</span> Contact Us</div>
+      <h1>Let's Talk About Your Project</h1>
+    </div>
+  </div>
+  <section>
+    <div class="wrap contact-grid">
+      <div>
+        <div class="eyebrow">Get In Touch</div>
+        <h2>Contact Information</h2>
+        <p>Reach out for a free, no-obligation estimate. We serve Ridgely, MD and the surrounding Eastern Shore.</p>
+        <ul class="contact-info-list">
+          <li><div class="ci-ico"><svg viewBox="0 0 24 24"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.8 11.1 7.1 11.3.3.2.6.2.9 0C12.2 21.1 20 15.4 20 10c0-4.4-3.6-8-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg></div>
+            <div><h4>Address</h4><p>6 8th St, Ridgely, MD 21660</p></div></li>
+          <li><div class="ci-ico"><svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z"/></svg></div>
+            <div><h4>Phone Number</h4><p><a href="tel:4107394723">(410) 739-4723</a></p></div></li>
+          <li><div class="ci-ico"><svg viewBox="0 0 24 24"><path d="M2 5h20v14H2V5zm2 2v.5l8 5 8-5V7l-8 5-8-5z"/></svg></div>
+            <div><h4>Email Address</h4><p><a href="mailto:jbtrakascontractor@gmail.com">jbtrakascontractor@gmail.com</a></p></div></li>
+          <li><div class="ci-ico"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 10.6l4.2 2.5-.8 1.3L11 13V6h1.5v6.6z"/></svg></div>
+            <div><h4>Working Hours</h4><p>Monday – Sunday · 7:00 AM – 8:00 PM</p></div></li>
+        </ul>
+      </div>
+      <div class="plate" style="padding:36px;background:var(--paper-dim);">
+        <span class="cA"></span><span class="cB"></span>
+        <div class="eyebrow">Request A Free Quote</div>
+        <form class="contact-form" id="quoteForm">
+          <div class="row2">
+            <div><label for="cf-name">Full Name</label><input id="cf-name" type="text" placeholder="Jane Smith" required></div>
+            <div><label for="cf-phone">Phone</label><input id="cf-phone" type="tel" placeholder="(410) 000-0000" required></div>
+          </div>
+          <div><label for="cf-email">Email</label><input id="cf-email" type="email" placeholder="you@email.com" required></div>
+          <div><label for="cf-service">Service Needed</label>
+            <select id="cf-service">
+              <option>Fences &amp; Patios Work</option>
+              <option>Decks and Porches</option>
+              <option>Vinyl Fence</option>
+              <option>Driveway Work</option>
+              <option>Sidewalks Work</option>
+              <option>Other / Not Sure</option>
+            </select>
+          </div>
+          <div><label for="cf-msg">Project Details</label><textarea id="cf-msg" placeholder="Tell us about your project..."></textarea></div>
+          <button type="submit" class="btn btn-brass" style="justify-self:start;">Send Request</button>
+        </form>
+      </div>
+    </div>
+    <div class="wrap map-frame">
+      <div class="eyebrow">Find Us</div>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d188631.6498265357!2d-75.88218104999999!3d38.997192049999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x41a8c8d99de29be9%3A0x18d5a199b97824a!2sJB%20Trakas%20Contractor%20LLC!5e1!3m2!1sen!2s!4v1786569452945!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+  </section>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site">
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <img src="https://jbtrakascontractors.com/wp-content/uploads/2025/07/Logo.jpg" alt="JB Trakas Contractor LLC logo">
+      <p>JB Trakas Contractor, LLC provides reliable fencing, decks, patios, driveways, and sidewalk services. We are committed to quality craftsmanship and customer satisfaction on every project.</p>
+      <div class="foot-social">
+        <a href="https://g.page/r/CUqCl5sZWo0BEBM/" target="_blank" rel="noopener" aria-label="Google Business Profile"><svg viewBox="0 0 24 24"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.8 11.1 7.1 11.3.3.2.6.2.9 0C12.2 21.1 20 15.4 20 10c0-4.4-3.6-8-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg></a>
+        <a href="tel:4107394723" aria-label="Call us"><svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z"/></svg></a>
+        <a href="mailto:jbtrakascontractor@gmail.com" aria-label="Email us"><svg viewBox="0 0 24 24"><path d="M2 5h20v14H2V5zm2 2v.5l8 5 8-5V7l-8 5-8-5z"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <h5>Quick Links</h5>
+      <ul>
+        <li><a href="#/home" data-route="/home">Home</a></li>
+        <li><a href="#/about" data-route="/about">About Us</a></li>
+        <li><a href="#/services" data-route="/services">Services</a></li>
+        <li><a href="#/gallery" data-route="/gallery">Gallery</a></li>
+        <li><a href="#/contact" data-route="/contact">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Services</h5>
+      <ul>
+        <li><a href="#/service/fences-patios" data-route="/service/fences-patios">Fences &amp; Patios Work</a></li>
+        <li><a href="#/service/decks-porches" data-route="/service/decks-porches">Decks and Porches</a></li>
+        <li><a href="#/service/vinyl-fence" data-route="/service/vinyl-fence">Vinyl Fence</a></li>
+        <li><a href="#/service/driveway" data-route="/service/driveway">Driveway Work</a></li>
+        <li><a href="#/service/sidewalks" data-route="/service/sidewalks">Sidewalks Work</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Contact Info</h5>
+      <ul class="foot-contact">
+        <li><svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z"/></svg><a href="tel:4107394723">(410) 739-4723</a></li>
+        <li><svg viewBox="0 0 24 24"><path d="M2 5h20v14H2V5zm2 2v.5l8 5 8-5V7l-8 5-8-5z"/></svg><a href="mailto:jbtrakascontractor@gmail.com">jbtrakascontractor@gmail.com</a></li>
+        <li><svg viewBox="0 0 24 24"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.8 11.1 7.1 11.3.3.2.6.2.9 0C12.2 21.1 20 15.4 20 10c0-4.4-3.6-8-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg><span>6 8th St, Ridgely, MD 21660</span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 10.6l4.2 2.5-.8 1.3L11 13V6h1.5v6.6z"/></svg><span>Mon – Sun, 7:00 AM – 8:00 PM</span></li>
+      </ul>
+      <div class="foot-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d188631.6498265357!2d-75.88218104999999!3d38.997192049999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x41a8c8d99de29be9%3A0x18d5a199b97824a!2sJB%20Trakas%20Contractor%20LLC!5e1!3m2!1sen!2s!4v1786569452945!5m2!1sen!2s" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      </div>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 JB Trakas Contractor LLC. All rights reserved.</span>
+    <span>Ridgely, MD &amp; Surrounding Areas</span>
+  </div>
+</footer>
+
+<script>
+/* ============ DATA ============ */
+const SERVICES = {
+  "fences-patios": {
+    name: "Fences & Patios Work",
+    short: "We design and install strong, attractive fences and patios that improve security and outdoor living space.",
+    long: "From privacy fencing to entertainment-ready patios, our team builds fences and patio surfaces that hold up to the Eastern Shore's weather while giving your property a defined, secured, and inviting outdoor footprint.",
+    img: "https://avatars.mds.yandex.net/i?id=f89045f4a71d2fd00b84729441268c8dd53434a8-4911348-images-thumbs&n=13",
+    features: ["Wood, chain-link & privacy fence installation", "Paver, stone & concrete patio surfaces", "Property line layout & gate installation", "Built to withstand local weather conditions"]
+  },
+  "decks-porches": {
+    name: "Decks and Porches",
+    short: "Custom-built decks and porches designed for comfort, durability, and style to enhance your home.",
+    long: "We design and build custom decks and porches sized and styled to fit your home, using durable materials and solid construction so you get an outdoor living space built for years of everyday use.",
+    img: "https://avatars.mds.yandex.net/i?id=da656691114fb0d447bfaffd792abc28f8721f58-9029350-images-thumbs&n=13",
+    features: ["Custom deck design & framing", "Covered and open-air porch builds", "Railing, stair & lighting options", "Durable, weather-resistant materials"]
+  },
+  "vinyl-fence": {
+    name: "Vinyl Fence",
+    short: "Low-maintenance, long-lasting vinyl fencing installed with clean, precise craftsmanship.",
+    long: "Vinyl fencing gives you the look of a finished, well-kept property without the upkeep of wood. We install privacy, picket, and rail-style vinyl fencing that resists rot, fading, and warping year after year.",
+    img: "https://avatars.mds.yandex.net/i?id=68b742bac9219bb358e56166f6589de946f7d70e-6367247-images-thumbs&n=13",
+    features: ["Privacy, picket & rail vinyl styles", "Low-maintenance, rot & fade resistant", "Precise post setting for a straight, level line", "Great for pools, yards & property borders"]
+  },
+  "driveway": {
+    name: "Driveway Work",
+    short: "We manage your entire driveway project from start to finish, coordinating materials and timelines.",
+    long: "Whether you need a new driveway poured or an existing one repaired, we handle grading, materials, and finishing so you end up with a smooth, durable surface that lasts.",
+    img: "https://avatars.mds.yandex.net/i?id=5f459763a1facf515729b5c501534f4e4c6fd832-4079679-images-thumbs&n=13",
+    features: ["New driveway installation", "Repair & resurfacing work", "Proper grading & drainage planning", "Full project management start to finish"]
+  },
+  "sidewalks": {
+    name: "Sidewalks Work",
+    short: "Durable, level sidewalks built for safety, curb appeal, and everyday use.",
+    long: "We pour and repair sidewalks that stay level and durable through every season, improving both the safety and curb appeal of your property.",
+    img: "https://avatars.mds.yandex.net/i?id=159f50a946429d5c0d4ed11a0ac54eb3daa0820b-5221635-images-thumbs&n=13",
+    features: ["New sidewalk installation", "Crack & trip-hazard repair", "Clean, level finishing", "Built to local code standards"]
+  }
+};
+const SERVICE_ORDER = ["fences-patios","decks-porches","vinyl-fence","driveway","sidewalks"];
+
+const TESTIMONIALS = [
+  {name:"John Doe", role:"Ridgely, MD", txt:"JB Trakas Contractor LLC transformed our backyard with a beautiful patio and deck. Professional, timely, and top-quality work!"},
+  {name:"James Wilson", role:"Caroline County, MD", txt:"From our new vinyl fence to the driveway repair, their team was courteous, skilled, and exceeded our expectations."},
+  {name:"Daniel Roberts", role:"Ridgely, MD", txt:"Highly recommend! They built our deck and porch perfectly. Great attention to detail and fantastic customer service."}
+];
+
+const FAQS = [
+  {q:"What services do you provide?", a:"We specialize in fences, patios, decks, porches, vinyl fences, driveways, and sidewalks, delivering quality craftsmanship for every project."},
+  {q:"Do you offer free estimates?", a:"Yes! We provide free, no-obligation estimates to help you plan your project with confidence."},
+  {q:"How long does a typical project take?", a:"Project timelines vary depending on size and scope, but we always strive to complete work efficiently without compromising quality."},
+  {q:"Are your services covered by a warranty?", a:"Absolutely! We stand behind our work and offer a warranty to ensure your complete satisfaction."}
+];
+
+const checkIcon = '<svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>';
+
+/* ============ RENDER HELPERS ============ */
+function serviceCard(slug){
+  const s = SERVICES[slug];
+  return `<div class="svc-card">
+    <div class="plate svc-img"><span class="cA"></span><span class="cB"></span><img src="${s.img}" alt="${s.name}"></div>
+    <div class="svc-body">
+      <h3>${s.name}</h3>
+      <p>${s.short}</p>
+      <a class="svc-link" href="#/service/${slug}" data-route="/service/${slug}">Learn More →</a>
+    </div>
+  </div>`;
+}
+function renderServiceGrids(){
+  document.getElementById('serviceGrid').innerHTML = SERVICE_ORDER.map(serviceCard).join('');
+  document.getElementById('serviceGridFull').innerHTML = SERVICE_ORDER.map(serviceCard).join('');
+}
+function galleryItem(slug, tall){
+  const s = SERVICES[slug];
+  return `<a href="#/service/${slug}" data-route="/service/${slug}" class="${tall?'tall':''}"><img src="${s.img}" alt="${s.name}"><span>${s.name}</span></a>`;
+}
+function renderGalleries(){
+  const previewOrder = ["decks-porches","fences-patios","vinyl-fence","driveway"];
+  document.getElementById('galleryPreview').innerHTML = previewOrder.map((s,i)=>galleryItem(s,i===0)).join('');
+  const fullItems = [...SERVICE_ORDER, ...SERVICE_ORDER.slice(0,3)];
+  document.getElementById('galleryFull').innerHTML = fullItems.map((s,i)=>galleryItem(s,i%5===0)).join('');
+}
+function testimonialCard(t){
+  return `<div class="tst-card"><span class="tst-quote">"</span><p class="txt">${t.txt}</p><div class="tst-name">${t.name}</div><div class="tst-role">${t.role}</div></div>`;
+}
+function renderTestimonials(){
+  document.getElementById('testimonialGrid').innerHTML = TESTIMONIALS.map(testimonialCard).join('');
+  document.getElementById('testimonialGridAbout').innerHTML = TESTIMONIALS.map(testimonialCard).join('');
+}
+function renderFAQ(){
+  document.getElementById('faqList').innerHTML = FAQS.map((f,i)=>`
+    <div class="faq-item${i===0?' open':''}">
+      <button class="faq-q" data-i="${i}"><span>${f.q}</span><span class="plus">+</span></button>
+      <div class="faq-a"><p>${f.a}</p></div>
+    </div>`).join('');
+  document.querySelectorAll('.faq-q').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      btn.closest('.faq-item').classList.toggle('open');
+    });
+  });
+}
+function renderServiceDetail(slug){
+  const s = SERVICES[slug] || SERVICES[SERVICE_ORDER[0]];
+  document.getElementById('svcCrumb').textContent = s.name;
+  document.getElementById('svcTitle').textContent = s.name;
+  document.getElementById('svcHeading').textContent = s.name;
+  document.getElementById('svcImg').src = s.img;
+  document.getElementById('svcImg').alt = s.name;
+  document.getElementById('svcDesc').textContent = s.long;
+  document.getElementById('svcFeatures').innerHTML = s.features.map(f=>`<li>${checkIcon}<span>${f}</span></li>`).join('');
+  const others = SERVICE_ORDER.filter(x=>x!==slug);
+  document.getElementById('otherServices').innerHTML = others.map(o=>{
+    const os = SERVICES[o];
+    return `<div class="os-card"><img src="${os.img}" alt="${os.name}"><h4>${os.name}</h4><a href="#/service/${o}" data-route="/service/${o}">View Service →</a></div>`;
+  }).join('');
+}
+
+/* ============ ROUTER ============ */
+const routes = ['/home','/about','/services','/service','/gallery','/contact'];
+function resolveRoute(hash){
+  let h = (hash || '#/home').replace('#','');
+  if(!h) h = '/home';
+  if(h.startsWith('/service/')) return {base:'/service', slug:h.split('/service/')[1]};
+  return {base:h, slug:null};
+}
+function navigate(){
+  const {base, slug} = resolveRoute(window.location.hash);
+  document.querySelectorAll('.route').forEach(r=>r.classList.remove('active'));
+  const target = document.getElementById('route-'+base) ? base : '/home';
+  document.getElementById('route-'+target).classList.add('active');
+  if(target === '/service') renderServiceDetail(slug);
+
+  document.querySelectorAll('[data-route]').forEach(a=>{
+    const r = a.getAttribute('data-route');
+    a.classList.toggle('active', r === (slug ? '/service/'+slug : target) || (target==='/service' && r==='/services'));
+  });
+
+  const titles = {'/home':'JB Trakas Contractor LLC | Fences, Decks, Patios & Driveways — Ridgely, MD','/about':'About Us | JB Trakas Contractor LLC','/services':'Services | JB Trakas Contractor LLC','/service':(SERVICES[slug]?SERVICES[slug].name:'Service')+' | JB Trakas Contractor LLC','/gallery':'Gallery | JB Trakas Contractor LLC','/contact':'Contact Us | JB Trakas Contractor LLC'};
+  document.title = titles[target] || titles['/home'];
+
+  window.scrollTo({top:0, behavior:'instant' in document.documentElement.style ? 'instant' : 'auto'});
+  document.getElementById('mobileNav').classList.remove('open');
+}
+window.addEventListener('hashchange', navigate);
+
+/* ============ MOBILE MENU ============ */
+document.getElementById('burgerBtn').addEventListener('click', ()=>{
+  document.getElementById('mobileNav').classList.toggle('open');
+});
+
+/* ============ CONTACT FORM (mailto) ============ */
+document.getElementById('quoteForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const name = document.getElementById('cf-name').value;
+  const phone = document.getElementById('cf-phone').value;
+  const email = document.getElementById('cf-email').value;
+  const service = document.getElementById('cf-service').value;
+  const msg = document.getElementById('cf-msg').value;
+  const body = `Name: ${name}%0APhone: ${phone}%0AEmail: ${email}%0AService: ${service}%0A%0AProject Details:%0A${encodeURIComponent(msg)}`;
+  window.location.href = `mailto:jbtrakascontractor@gmail.com?subject=Free Quote Request from ${encodeURIComponent(name)}&body=${body}`;
+});
+
+/* ============ INIT ============ */
+renderServiceGrids();
+renderGalleries();
+renderTestimonials();
+renderFAQ();
+navigate();
+</script>
+</body>
+</html>
